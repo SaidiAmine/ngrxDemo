@@ -1,5 +1,6 @@
 import {Action} from '@ngrx/store';
 import {IUser} from '../../models/user.interface';
+import {logger} from 'codelyzer/util/logger';
 
 export enum EUserActions {
   GetUsers = '[User] Get Users',
@@ -8,13 +9,14 @@ export enum EUserActions {
   GetUserSuccess = '[User] Get User Success'
 }
 
+
 export class GetUsers implements Action {
   public readonly type = EUserActions.GetUsers;
 }
 
 export class GetUser implements Action {
   public readonly type = EUserActions.GetUser;
-  constructor(public payloa: number) {  }
+  constructor(public payload: number) {  }
 }
 
 export class GetUsersSuccess implements Action {
